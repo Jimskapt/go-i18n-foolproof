@@ -8,6 +8,7 @@ import (
 
 // Locales are a map of all registred locales in i18nfoolproof system.
 var Locales = map[string]map[string]string{}
+var Redirects = map[string]string{}
 
 // RegisterLocale registers a locale in i18n-foolproof system.
 func RegisterLocale(data map[string]string, name string) error {
@@ -35,6 +36,10 @@ func Get(text, locale string) (string, Warning) {
 	result := Locales[locale][text]
 
 	if result == "" {
+		if Redirects[text] != "" {
+			return Get(Redirects[text], locale)
+		}
+
 		return text, WarningTextNotFoundInLocale{text: text, locale: locale}
 	}
 

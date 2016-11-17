@@ -53,6 +53,11 @@ func main() {
 	fmt.Println(i18n.MustGet("Text not registered.", "fr_FR"))
 	// prints `Text not registered.`
 
+	// Redirected text :
+	i18n.Redirects["Text not registered."] = "Redirected text."
+	fmt.Println(i18n.MustGet("Text not registered.", "fr_FR"))
+	// prints `Redirected text.`
+
 	// Unknown locale :
 	fmt.Println(i18n.MustGet("This is an example of translated text.", "zh_CN"))
 	// prints `This is an example of translated text.`
