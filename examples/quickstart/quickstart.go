@@ -32,13 +32,13 @@ func main() {
 	// REGISTERING locales :
 
 	parsed, _, _ := i18n.JSONParser{}.Parse([]byte(en_EN))
-	i18n.RegisterLocale(parsed, "en_EN")
+	i18n.Locales["en_EN"] = parsed
 
 	parsed, _, _ = i18n.JSONParser{}.Parse([]byte(fr_FR))
-	i18n.RegisterLocale(parsed, "fr_FR")
+	i18n.Locales["fr_FR"] = parsed
 
 	parsed, _, _ = i18n.JSONParser{}.Parse([]byte(es_ES))
-	i18n.RegisterLocale(parsed, "es_ES")
+	i18n.Locales["es_ES"] = parsed
 
 	// DISPLAY translations :
 

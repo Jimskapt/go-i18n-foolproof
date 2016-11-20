@@ -10,6 +10,7 @@ import (
 var Locales = map[string]map[string]string{}
 var Redirects = map[string]string{}
 
+// Deprecated : you should use "Locales" variable instead.
 // RegisterLocale registers a locale in i18n-foolproof system.
 func RegisterLocale(data map[string]string, name string) error {
 
@@ -56,6 +57,7 @@ func MustGet(text, locale string) string {
 
 }
 
+// Deprecated : you should use "Locales" variable instead.
 // GetLocale returns all data for a locale.
 func GetLocale(name string) (map[string]string, error) {
 
