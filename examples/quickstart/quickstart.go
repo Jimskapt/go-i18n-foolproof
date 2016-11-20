@@ -62,7 +62,7 @@ func main() {
 	fmt.Println(i18n.MustGet("This is an example of translated text.", "zh_CN"))
 	// prints `This is an example of translated text.`
 
-	// Volontary forgot in the following locale :
+	// Voluntary forgot in the following locale :
 	fmt.Println(i18n.MustGet("This is another text ...", "fr_FR"))
 	// prints `This is another text ...`
 
